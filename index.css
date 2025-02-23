@@ -19,7 +19,10 @@
 #myName,
 #months,
 #visited,
-#writers {
+#writers,
+#great,
+#really,
+#ideas {
   width: 60px;
   border-radius: 3px;
   text-align: center;
@@ -27,13 +30,21 @@
 
 #meetings,
 #punctual,
-#coming {
+#coming,
+#tired,
+#finish,
+#view {
   width: 70px;
   border-radius: 3px;
   text-align: center;
 }
 
-#sightseeing {
+#sightseeing,
+#start,
+#introduce,
+#that,
+#just,
+#again {
   width: 90px;
   border-radius: 3px;
   text-align: center;
