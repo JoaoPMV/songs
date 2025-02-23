@@ -13,3 +13,9 @@
   text-align: justify;
   padding: 1vh 20px;
 }
+
+#myName {
+  width: 50px;
+  border-radius: 5px;
+  text-align: center;
+}

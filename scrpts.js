@@ -4,6 +4,7 @@ const aef2ep13 = document.getElementById("aef2ep13");
 const textaef2ep11 = document.getElementById("textaef2ep11");
 const textaef2ep12 = document.getElementById("textaef2ep12");
 const textaef2ep13 = document.getElementById("textaef2ep13");
+const myName = document.getElementById("myName");
 
 aef2ep11.addEventListener("click", function () {
   if (textaef2ep11.style.display === "none") {
@@ -26,5 +27,11 @@ aef2ep13.addEventListener("click", function () {
     textaef2ep13.style.display = "block";
   } else {
     textaef2ep13.style.display = "none";
+  }
+});
+
+myName.addEventListener("input", function () {
+  if (this.value === "name") {
+    this.style.border = "2px solid green";
   }
 });
