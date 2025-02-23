@@ -33,5 +33,7 @@ aef2ep13.addEventListener("click", function () {
 myName.addEventListener("input", function () {
   if (this.value === "name") {
     this.style.border = "2px solid green";
+  } else {
+    this.style.border = "2px solid red";
   }
 });
