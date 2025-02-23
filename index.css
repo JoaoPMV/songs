@@ -14,8 +14,27 @@
   padding: 1vh 20px;
 }
 
-#myName {
-  width: 50px;
-  border-radius: 5px;
+
+
+#myName,
+#months,
+#visited,
+#writers {
+  width: 60px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#meetings,
+#punctual,
+#coming {
+  width: 70px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#sightseeing {
+  width: 90px;
+  border-radius: 3px;
   text-align: center;
 }
