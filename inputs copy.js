@@ -1,31 +1,5 @@
-const myName = document.getElementById("myName");
-const months = document.getElementById("months");
-const visited = document.getElementById("visited");
-const meetings = document.getElementById("meetings");
-const writers = document.getElementById("writers");
-const sightseeing = document.getElementById("sightseeing");
-const punctual = document.getElementById("punctual");
-const coming = document.getElementById("coming");
-const great = document.getElementById("great");
-const really = document.getElementById("really");
-const view = document.getElementById("view");
-const introduce = document.getElementById("introduce");
-const start = document.getElementById("start");
-const ideas = document.getElementById("ideas");
-const tired = document.getElementById("tired");
-const finish = document.getElementById("finish");
-const that = document.getElementById("that");
-const just = document.getElementById("just");
-const again = document.getElementById("again");
-const help = document.getElementById("help");
-const theres = document.getElementById("theres");
-const send = document.getElementById("send");
-const right = document.getElementById("right");
-const cant = document.getElementById("cant");
-const put = document.getElementById("put");
-const everything = document.getElementById("everything");
 const bigger = document.getElementById("bigger");
-const finalmente = document.getElementById("finally");
+const finalmente = document.getElementById("finalmente");
 const came = document.getElementById("came");
 const better = document.getElementById("better");
 const would = document.getElementById("would");
@@ -79,7 +53,6 @@ const absolutely = document.getElementById("absolutely");
 const feeling = document.getElementById("feeling");
 const headache = document.getElementById("headache");
 const temperature = document.getElementById("temperature");
-const many = document.getElementById("many");
 const forty = document.getElementById("forty");
 const eight = document.getElementById("eight");
 const meal = document.getElementById("meal");
@@ -106,322 +79,19 @@ const off = document.getElementById("off");
 const could = document.getElementById("could");
 const only = document.getElementById("only");
 const straight = document.getElementById("straight");
-const called = document.getElementById("called");
+const correto = document.getElementById("right");
 const underground = document.getElementById("underground");
 const stopped = document.getElementById("stopped");
 const tried = document.getElementById("tried");
 const ran = document.getElementById("ran");
-const said = document.getElementById("said");
 const inside = document.getElementById("inside");
-const find = document.getElementById("find");
 const young = document.getElementById("young");
-const interested = document.getElementById("interested");
-const same = document.getElementById("same");
-const touch = document.getElementById("touch");
-const wont = document.getElementById("wont");
-const este = document.getElementById("this");
-const together = document.getElementById("together");
-const missed = document.getElementById("missed");
-const give = document.getElementById("give");
-const wrong = document.getElementById("wrong");
-const speak = document.getElementById("speak");
-const through = document.getElementById("through");
-const leave = document.getElementById("leave");
-const returning = document.getElementById("returning");
-const hold = document.getElementById("hold");
-const earlier = document.getElementById("earlier");
 const thought = document.getElementById("thought");
 const offered = document.getElementById("offered");
 const pleased = document.getElementById("pleased");
 const hasnt = document.getElementById("hasnt");
 const read = document.getElementById("read");
 const explain = document.getElementById("explain");
-
-myName.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "name") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-months.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "months") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-visited.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "visited") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-meetings.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "meetings") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-writers.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "writers") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-sightseeing.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "sightseeing") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-punctual.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "punctual") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-coming.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "coming") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-great.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "great") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-really.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "really") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-view.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "view") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-introduce.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "introduce") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-start.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "start") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-ideas.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "ideas") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-tired.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "tired") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-finish.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "finish") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-that.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "that") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-just.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "just") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-again.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "again") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-help.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "help") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-theres.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "there's") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-send.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "send") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-right.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "right") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-cant.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "can't") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-put.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "put") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-everything.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "everything") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
 
 bigger.addEventListener("input", function () {
   if (this.value.toLowerCase() === "bigger") {
@@ -458,17 +128,6 @@ came.addEventListener("input", function () {
 
 better.addEventListener("input", function () {
   if (this.value.toLowerCase() === "better") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-would.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "would") {
     this.style.border = "2px solid green";
     this.style.backgroundColor = "#ADFF2F";
     this.style.color = "green";
@@ -601,17 +260,6 @@ theater.addEventListener("input", function () {
 
 bring.addEventListener("input", function () {
   if (this.value.toLowerCase() === "bring") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-bottles.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "bottles") {
     this.style.border = "2px solid green";
     this.style.backgroundColor = "#ADFF2F";
     this.style.color = "green";
@@ -1028,17 +676,6 @@ temperature.addEventListener("input", function () {
   }
 });
 
-many.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "many") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
 forty.addEventListener("input", function () {
   if (this.value.toLowerCase() === "forty") {
     this.style.border = "2px solid green";
@@ -1172,7 +809,7 @@ interview.addEventListener("input", function () {
 });
 
 theyre.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "they're") {
+  if (this.value.toLowerCase() === "theyre") {
     this.style.border = "2px solid green";
     this.style.backgroundColor = "#ADFF2F";
     this.style.color = "green";
@@ -1325,8 +962,8 @@ straight.addEventListener("input", function () {
   }
 });
 
-called.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "called") {
+correto.addEventListener("input", function () {
+  if (this.value.toLowerCase() === "right") {
     this.style.border = "2px solid green";
     this.style.backgroundColor = "#ADFF2F";
     this.style.color = "green";
@@ -1380,41 +1017,8 @@ tried.addEventListener("input", function () {
   }
 });
 
-ran.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "ran") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-said.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "said") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
 inside.addEventListener("input", function () {
   if (this.value.toLowerCase() === "inside") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-find.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "find") {
     this.style.border = "2px solid green";
     this.style.backgroundColor = "#ADFF2F";
     this.style.color = "green";
@@ -1437,160 +1041,6 @@ young.addEventListener("input", function () {
 
 interested.addEventListener("input", function () {
   if (this.value.toLowerCase() === "interested") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-same.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "same") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-touch.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "touch") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-wont.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "won't") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-este.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "this") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-together.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "together") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-missed.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "missed") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-give.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "give") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-wrong.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "wrong") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-speak.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "speak") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-through.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "through") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-leave.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "leave") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-returning.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "returning") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-hold.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "hold") {
-    this.style.border = "2px solid green";
-    this.style.backgroundColor = "#ADFF2F";
-    this.style.color = "green";
-  } else {
-    this.style.border = "2px solid red";
-    this.style.color = "red";
-  }
-});
-
-earlier.addEventListener("input", function () {
-  if (this.value.toLowerCase() === "earlier") {
     this.style.border = "2px solid green";
     this.style.backgroundColor = "#ADFF2F";
     this.style.color = "green";

@@ -56,42 +56,9 @@
   border: 2px solid black;
 }
 
-#myName,
-#months,
-#visited,
-#writers,
-#great,
-#really,
-#ideas,
-#cant,
-#put {
-  width: 60px;
-  border-radius: 3px;
-  text-align: center;
-}
-
-#meetings,
-#punctual,
-#coming,
-#tired,
-#finish,
-#view,
-#theres,
-#send {
-  width: 70px;
-  border-radius: 3px;
-  text-align: center;
-}
-
-#sightseeing,
-#start,
-#introduce,
-#that,
-#just,
-#again,
-#help,
-#right {
+input {
   width: 90px;
-  border-radius: 3px;
-  text-align: center;
+  height: 30px;
+  border: 1px solid rgb(178, 77, 77);
+  border-radius: 5px;
 }
