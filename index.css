@@ -2,12 +2,43 @@
   background-color: rgb(235, 232, 232);
 }
 
+.chapter {
+  border: 1px solid rgb(170, 169, 169);
+  padding: 5px 0;
+  text-align: center;
+  color: rgb(59, 59, 59);
+}
+
 #textaef2ep11,
 #textaef2ep12,
-#textaef2ep13 {
+#textaef2ep13,
+#textaef2ep21,
+#textaef2ep22,
+#textaef2ep23,
+#textaef2ep31,
+#textaef2ep32,
+#textaef2ep33,
+#textaef2ep41,
+#textaef2ep42,
+#textaef2ep43,
+#textaef2ep51,
+#textaef2ep52,
+#textaef2ep53,
+#textaef2ep61,
+#textaef2ep62,
+#textaef2ep63 {
   display: none;
   font-size: 14px;
   line-height: 180%;
+  padding: 15px 0;
+  color: rgb(40, 39, 39);
+  text-align: justify;
+  padding: 1vh 20px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 150%;
   padding: 15px 0;
   color: rgb(40, 39, 39);
   text-align: justify;
@@ -22,7 +53,9 @@
 #writers,
 #great,
 #really,
-#ideas {
+#ideas,
+#cant,
+#put {
   width: 60px;
   border-radius: 3px;
   text-align: center;
@@ -33,7 +66,9 @@
 #coming,
 #tired,
 #finish,
-#view {
+#view,
+#theres,
+#send {
   width: 70px;
   border-radius: 3px;
   text-align: center;
@@ -44,7 +79,9 @@
 #introduce,
 #that,
 #just,
-#again {
+#again,
+#help,
+#right {
   width: 90px;
   border-radius: 3px;
   text-align: center;

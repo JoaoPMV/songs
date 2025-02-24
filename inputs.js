@@ -17,6 +17,12 @@ const finish = document.getElementById("finish");
 const that = document.getElementById("that");
 const just = document.getElementById("just");
 const again = document.getElementById("again");
+const help = document.getElementById("help");
+const theres = document.getElementById("theres");
+const send = document.getElementById("send");
+const right = document.getElementById("right");
+const cant = document.getElementById("cant");
+const put = document.getElementById("put");
 
 myName.addEventListener("input", function () {
   if (this.value.toLowerCase() === "name") {
@@ -218,6 +224,72 @@ just.addEventListener("input", function () {
 
 again.addEventListener("input", function () {
   if (this.value.toLowerCase() === "again") {
+    this.style.border = "2px solid green";
+    this.style.backgroundColor = "#ADFF2F";
+    this.style.color = "green";
+  } else {
+    this.style.border = "2px solid red";
+    this.style.color = "red";
+  }
+});
+
+help.addEventListener("input", function () {
+  if (this.value.toLowerCase() === "help") {
+    this.style.border = "2px solid green";
+    this.style.backgroundColor = "#ADFF2F";
+    this.style.color = "green";
+  } else {
+    this.style.border = "2px solid red";
+    this.style.color = "red";
+  }
+});
+
+theres.addEventListener("input", function () {
+  if (this.value.toLowerCase() === "there's") {
+    this.style.border = "2px solid green";
+    this.style.backgroundColor = "#ADFF2F";
+    this.style.color = "green";
+  } else {
+    this.style.border = "2px solid red";
+    this.style.color = "red";
+  }
+});
+
+send.addEventListener("input", function () {
+  if (this.value.toLowerCase() === "send") {
+    this.style.border = "2px solid green";
+    this.style.backgroundColor = "#ADFF2F";
+    this.style.color = "green";
+  } else {
+    this.style.border = "2px solid red";
+    this.style.color = "red";
+  }
+});
+
+right.addEventListener("input", function () {
+  if (this.value.toLowerCase() === "right") {
+    this.style.border = "2px solid green";
+    this.style.backgroundColor = "#ADFF2F";
+    this.style.color = "green";
+  } else {
+    this.style.border = "2px solid red";
+    this.style.color = "red";
+  }
+});
+
+cant.addEventListener("input", function () {
+  if (this.value.toLowerCase() === "can't") {
+    this.style.border = "2px solid green";
+    this.style.backgroundColor = "#ADFF2F";
+    this.style.color = "green";
+  } else {
+    this.style.border = "2px solid red";
+    this.style.color = "red";
+  }
+});
+
+put.addEventListener("input", function () {
+  if (this.value.toLowerCase() === "put") {
     this.style.border = "2px solid green";
     this.style.backgroundColor = "#ADFF2F";
     this.style.color = "green";
