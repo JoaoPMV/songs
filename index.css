@@ -44,10 +44,13 @@
 .description {
   font-size: 14px;
   line-height: 150%;
-  padding: 15px 0;
-  color: rgb(40, 39, 39);
+  padding-top: 5vh;
+  color: rgb(63, 62, 62);
   text-align: justify;
-  padding: 1vh 20px;
+  margin: 1vw;
+  background-color: rgb(240, 242, 240);
+  border-radius: 15px;
+
 }
 
 .title {
@@ -58,9 +61,10 @@
 
 input {
   width: 90px;
-  height: 30px;
-  border: 1px solid rgb(178, 77, 77);
+  height: 25px;
+  border: 1px solid rgb(63, 62, 62);
   border-radius: 5px;
+  text-align: center;
 }
 
 .iconBlue {
@@ -80,4 +84,14 @@ input {
   font-size: 13px;
   font-weight: bold;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fundoVermelho {
+  background-image: linear-gradient(to right, rgb(150, 22, 22), rgb(121, 5, 5));
+  color: wheat;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
