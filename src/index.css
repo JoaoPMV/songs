@@ -36,8 +36,6 @@
     pointer-events: none;
   }
 
-
-
   .hg-button {
     font-size: 20px;
     transition: background-color 0.12s ease, transform 0.05s ease;
@@ -118,7 +116,6 @@
     color: white;
   }
 
-
   .main-music {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -156,11 +153,14 @@
 
   .lyrics-input:focus {
     outline: none;
+    border: 1px solid white;
   }
 
   .correct-word {
     background-color: green;
     border: none;
+    outline: none;
+
   }
 
   .wrong-word {
@@ -189,7 +189,6 @@
     border: none;
   }
 
-
   .footer-music {
     display: none;
     z-index: 1;
@@ -210,6 +209,11 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 7dvh 86dvh 7dvh;
       padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0);
+    }
+
+    .lyrics-input:focus {
+      outline: none;
+      border: 1px solid gray;
     }
 
     .header-music {

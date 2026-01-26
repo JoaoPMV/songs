@@ -35,69 +35,80 @@ const Music = () => {
 
   // lyricsText formatado como um array
   const lyricsText = [
-    "It {starts} with one",
-    "One thing, I {don't} know why",
-    "It doesn't {even} matter",
-    "how {hard} you try",
-    "Keep that in {mind}",
-    "I {designed} this rhyme",
-    "To {explain} in due time (all I know)",
-    "Time is a {valuable} thing",
-    "Watch it fly by as the pendulum {swings}",
-    "Watch it count {down}",
-    "To the end of the day",
-    "The {clock} ticks life away",
-    "it's so {unreal}",
-    "You {didn't} look out below",
-    "Watch the time go",
-    "Right out the {window}",
-    "{Trying} to hold on",
-    "To didn't even know",
-    "I {wasted} it all just to watch you go",
-    "I {kept} everything inside",
-    "And even {though} I tried",
-    "it all fell {apart}",
-    "What it meant to me will {eventually}",
-    "Be a {memory} of a time when",
-    "I tried so {hard} and got so far",
-    "But in the end, it doesn't even {matter}",
-    "I {had} to fall to lose it all",
-    "But in the end, it doesn't even {matter}",
-    "One thing, I {don't} know why",
-    "It doesn't {even} matter how hard you try",
-    "Keep that in {mind}",
-    "I {designed} this rhyme",
-    "To {remind} myself",
-    "how I {tried} so hard",
-    "In {spite} of the way",
-    "You were mocking me",
-    "Acting like I was part of your {property}",
-    "{Remembering} all the times you fought with me",
-    "I'm {surprised} it got so far (got so far)",
-    "Things {aren't} the way they were before",
-    "You {wouldn't} even recognize me anymore",
-    "Not that you knew me {back} then",
-    "But it all {comes} back to me (in the end)",
-    "You {kept} everything inside",
-    "And even {though} I tried, it all fell apart",
-    "What it meant to me will {eventually}",
-    "Be a {memory} of a time when",
-    "I tried so {hard} and got so far",
-    "But in the end, it doesn't even {matter}",
-    "I {had} to fall to lose it all",
-    "But in the end, it doesn't even {matter}",
-    "I've put my {trust} in you",
-    "Pushed as {far} as I can go",
-    "For all {this}",
-    "{There's} only one thing you should know",
-    "I've put my {trust} in you",
-    "Pushed as {far} as I can go",
-    "For all {this}",
-    "{There's} only one thing you should know",
-    "I tried so {hard} and got so far",
-    "But in the end, it doesn't even {matter}",
-    "I {had} to fall to lose it all",
-    "But in the end, it doesn't even {matter}",
+    "When the days are {cold}",
+    "And the cards all {fold}",
+    "And the {saints} we see",
+    "Are all {made} of gold",
+
+    "When your dreams all {fail}",
+    "And the ones we {hail}",
+    "Are the {worst} of all",
+    "And the blood's run {stale}",
+
+    "I wanna {hide} the truth",
+    "I wanna {shelter} you",
+    "But with the {beast} inside",
+    "There's {nowhere} we can hide",
+
+    "No matter what we {breed}",
+    "We still are made of {greed}",
+    "This is my {kingdom} come",
+    "This is my {kingdom} come",
+
+    "When you feel my {heat}",
+    "Look {into} my eyes",
+    "It's where my demons {hide}",
+    "It's where my demons {hide}",
+    "Don't get too {close}",
+    "It's dark {inside}",
+    "It's where my demons {hide}",
+    "It's where my demons {hide}",
+
+    "At the curtain's {call}",
+    "Is the {last} of all",
+    "When the lights {fade} out",
+    "All the {sinners} crawl",
+    "So they {dug} your grave",
+    "And the {masquerade}",
+    "Will come {calling} out",
+    "At the {mess} you made",
+
+    "Don't wanna let you {down}",
+    "But I am hell {bound}",
+    "{Though} this is all for you",
+    "Don't wanna hide the {truth}",
+
+    "No matter what we {breed}",
+    "We still are made of {greed}",
+    "This is my {kingdom} come",
+    "This is my {kingdom} come",
+
+    "When you feel my {heat}",
+    "Look {into} my eyes",
+    "It's where my demons {hide}",
+    "It's where my demons {hide}",
+    "Don't get too {close}",
+    "It's dark {inside}",
+    "It's where my demons {hide}",
+    "It's where my demons {hide}",
+
+    "They say it's what you {make}",
+    "I say it's up to {fate}",
+    "It's {woven} in my {soul}",
+    "I {need} to let you go",
+    "Your eyes, they shine so {bright}",
+    "I wanna save that {light}",
+    "I can't {escape} this now",
+    "{Unless} you show me how",
+
+    "When you feel my {heat}",
+    "Look {into} my eyes",
+    "It's where my demons {hide}",
+    "It's where my demons {hide}",
+    "Don't get too {close}",
+    "It's dark {inside}",
+    "It's where my demons {hide}",
+    "It's where my demons {hide}",
   ];
 
   // Remove duplicatas, extraindo palavras únicas entre {}
@@ -134,17 +145,21 @@ const Music = () => {
                   lyricsInputs[currentInputIndex]?.length > 0
                     ? lyricsInputs[currentInputIndex].toLowerCase() ===
                       cleanWord.toLowerCase()
-                      ? "correct-word"
-                      : "wrong-word"
+                      ? "correct-word" // Fundo verde para palavras corretas
+                      : "wrong-word" // Fundo vermelho para palavras incorretas
                     : ""
                 }`}
                 inputMode={isMobile ? "none" : "text"} // Permite edição padrão em desktops
-                readOnly={isMobile} // readOnly só para dispositivos móveis
+                readOnly={isMobile} // Apenas leitura para dispositivos móveis
                 onChange={(e) => {
                   // Atualiza o estado lyricsInputs para permitir digitação diretamente via teclado físico
                   const newInputs = [...lyricsInputs];
                   newInputs[currentInputIndex] = e.target.value;
                   setLyricsInputs(newInputs);
+                }}
+                onFocus={() => {
+                  // Atualiza o índice do input ativo sem mudar o estilo
+                  setActiveInputIndex(currentInputIndex);
                 }}
                 value={lyricsInputs[currentInputIndex] || ""}
               />
@@ -210,7 +225,7 @@ const Music = () => {
         <Navbar></Navbar>
       </header>
       <section className="section-music">
-        <p>Link Park - In the End</p>
+        <p>Imagine Dragons - Demons</p>
 
         <audio
           ref={audioRef}
@@ -219,7 +234,7 @@ const Music = () => {
           controlsList="nodownload noplaybackrate nofullscreen"
         >
           <source
-            src={`${import.meta.env.BASE_URL}songs/intheend.mp3`}
+            src={`${import.meta.env.BASE_URL}songs/demons.mp3`}
             type="audio/mpeg"
           />
         </audio>
