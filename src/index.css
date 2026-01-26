@@ -39,6 +39,12 @@
 
   .hg-button {
     font-size: 20px;
+    transition: background-color 0.12s ease, transform 0.05s ease;
+  }
+
+  .hg-button.hg-activeButton {
+    background-color: #c7d2fe;
+    transform: scale(0.97);
   }
 
   .hg-row {

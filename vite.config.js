@@ -4,4 +4,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/songs/",
+  server: {
+    host: true,
+  },
 });
