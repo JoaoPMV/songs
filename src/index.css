@@ -19,9 +19,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     overflow-y: visible;
-
   }
 
   .background-blur {
@@ -34,22 +32,17 @@
     background-size: cover;
     background-position: center;
     filter: blur(8px);
-    /* blur só no fundo */
     z-index: 0;
   }
 
-  .simple-keyboard {
-    height: 22dvh;
-  }
+
 
   .hg-button {
     font-size: 20px;
-
-
   }
 
   .hg-row {
-    height: 50px;
+    height: 45px;
   }
 
   .header-music {
@@ -136,7 +129,7 @@
     line-height: 250%;
     color: white;
     width: clamp(100%, 70vw, 900px);
-    height: 47vh;
+    height: 100%;
     overflow-y: auto;
     padding-left: clamp(5px, 2vw, 60px);
   }
