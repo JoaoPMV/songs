@@ -33,6 +33,7 @@
     background-position: center;
     filter: blur(8px);
     z-index: 0;
+    pointer-events: none;
   }
 
 
@@ -42,6 +43,7 @@
     transition: background-color 0.12s ease, transform 0.05s ease;
   }
 
+  .hg-button:active,
   .hg-button.hg-activeButton {
     background-color: #c7d2fe;
     transform: scale(0.97);
@@ -198,6 +200,7 @@
     grid-row: 3 / 4;
     z-index: 1;
     padding: 0.1rem;
+    pointer-events: auto;
   }
 
 
