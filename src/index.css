@@ -13,7 +13,7 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 26dvh 52dvh 1fr;
+    grid-template-rows: 26dvh 52dvh 22dvh;
     font-size: clamp(1rem, 1.2vw, 1.5rem);
     background-image: url("/images/background.jpg");
     background-size: cover;
@@ -36,6 +36,20 @@
     filter: blur(8px);
     /* blur só no fundo */
     z-index: 0;
+  }
+
+  .simple-keyboard {
+    height: 22dvh;
+  }
+
+  .hg-button {
+    font-size: 20px;
+
+
+  }
+
+  .hg-row {
+    height: 50px;
   }
 
   .header-music {
