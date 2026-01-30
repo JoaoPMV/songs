@@ -3,10 +3,10 @@ import VirtualKeyboard from "./components/VirtualKeyboard";
 import Navbar from "./components/Navbar";
 import { FaCaretSquareLeft, FaCaretSquareRight } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import Audioplayer from "./components/Audioplayer";
 import "./index.css";
 
 const Music = () => {
-  const [showLyrics, setShowLyrics] = useState(false);
   const [showVocabulary, setShowVocabulary] = useState(false);
   const [keyboardVisible, setKeyboardVisible] = useState(
     window.matchMedia("(max-width: 768px)").matches,
@@ -16,24 +16,47 @@ const Music = () => {
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 768px)").matches,
   );
-  const audioRef = useRef(null);
+
+  const audioPlayerRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+  const inputsRef = useRef([]);
+
+  // 🔥 ADIÇÃO
+  const isAutoFocusing = useRef(false);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+
+    const diff = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(diff) < 50) return;
+
+    if (diff > 0) {
+      setShowVocabulary(true);
+    } else {
+      setShowVocabulary(false);
+    }
+  };
 
   React.useEffect(() => {
     console.log("isMobile changed:", isMobile);
   }, [isMobile]);
 
-  // Verifica mudanças em activeInputIndex
   React.useEffect(() => {
     console.log("activeInputIndex changed:", activeInputIndex);
   }, [activeInputIndex]);
 
   React.useEffect(() => {
-    if (isMobile && showLyrics) {
+    if (isMobile && !showVocabulary) {
       setActiveInputIndex(0);
     }
-  }, [isMobile, showLyrics]);
+  }, [isMobile, showVocabulary]);
 
-  // lyricsText formatado como um array
   const lyricsText = [
     "When the days are {cold}",
     "And the cards all {fold}",
@@ -111,7 +134,6 @@ const Music = () => {
     "It's where my demons {hide}",
   ];
 
-  // Remove duplicatas, extraindo palavras únicas entre {}
   const vocabularyWords = [
     ...new Set(
       lyricsText
@@ -141,24 +163,23 @@ const Music = () => {
             return (
               <input
                 key={`input-${i}-${index}-${cleanWord}`}
+                ref={(el) => (inputsRef.current[currentInputIndex] = el)}
                 className={`lyrics-input ${
                   lyricsInputs[currentInputIndex]?.length > 0
                     ? lyricsInputs[currentInputIndex].toLowerCase() ===
                       cleanWord.toLowerCase()
-                      ? "correct-word" // Fundo verde para palavras corretas
-                      : "wrong-word" // Fundo vermelho para palavras incorretas
+                      ? "correct-word"
+                      : "wrong-word"
                     : ""
                 }`}
-                inputMode={isMobile ? "none" : "text"} // Permite edição padrão em desktops
-                readOnly={isMobile} // Apenas leitura para dispositivos móveis
+                inputMode={isMobile ? "none" : "text"}
+                readOnly={isMobile}
                 onChange={(e) => {
-                  // Atualiza o estado lyricsInputs para permitir digitação diretamente via teclado físico
                   const newInputs = [...lyricsInputs];
                   newInputs[currentInputIndex] = e.target.value;
                   setLyricsInputs(newInputs);
                 }}
                 onFocus={() => {
-                  // Atualiza o índice do input ativo sem mudar o estilo
                   setActiveInputIndex(currentInputIndex);
                 }}
                 value={lyricsInputs[currentInputIndex] || ""}
@@ -176,21 +197,33 @@ const Music = () => {
     ));
   };
 
-  const forward10 = () => {
-    if (!audioRef.current) return;
-    audioRef.current.currentTime = Math.min(
-      audioRef.current.duration,
-      audioRef.current.currentTime + 10,
-    );
-  };
+  // 🔥 SUBSTITUÍDO (auto-focus com lock anti-loop)
+  React.useEffect(() => {
+    if (activeInputIndex === null) return;
+    if (isAutoFocusing.current) return;
 
-  const back10 = () => {
-    if (!audioRef.current) return;
-    audioRef.current.currentTime = Math.max(
-      0,
-      audioRef.current.currentTime - 10,
-    );
-  };
+    const currentValue = lyricsInputs[activeInputIndex];
+    const correctWord = vocabularyWords[activeInputIndex];
+
+    if (
+      currentValue &&
+      correctWord &&
+      currentValue.toLowerCase() === correctWord.toLowerCase()
+    ) {
+      const nextIndex = activeInputIndex + 1;
+
+      if (inputsRef.current[nextIndex]) {
+        isAutoFocusing.current = true;
+
+        inputsRef.current[nextIndex].focus();
+        setActiveInputIndex(nextIndex);
+
+        setTimeout(() => {
+          isAutoFocusing.current = false;
+        }, 50);
+      }
+    }
+  }, [lyricsInputs, activeInputIndex]);
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -199,21 +232,16 @@ const Music = () => {
       setKeyboardVisible(isMobileNow);
     };
 
-    // Otimiza os eventos de resize com debounce
     let resizeTimeout;
     const debouncedResize = () => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(handleResize, 200); // Debounce de 200ms
+      resizeTimeout = setTimeout(handleResize, 200);
     };
 
-    // Atualiza o estado no momento da montagem
     handleResize();
-
-    // Adiciona o listener com debounce
     window.addEventListener("resize", debouncedResize);
 
     return () => {
-      // Remove o listener ao desmontar o componente
       window.removeEventListener("resize", debouncedResize);
     };
   }, []);
@@ -227,61 +255,31 @@ const Music = () => {
       <section className="section-music">
         <p>Imagine Dragons - Demons</p>
 
-        <audio
-          ref={audioRef}
-          controls
-          className="audio-player-music"
-          controlsList="nodownload noplaybackrate nofullscreen"
+        <Audioplayer ref={audioPlayerRef} />
+        <button
+          className="button-vocabulary"
+          onClick={() => setShowVocabulary((prev) => !prev)}
         >
-          <source
-            src={`${import.meta.env.BASE_URL}songs/demons.mp3`}
-            type="audio/mpeg"
-          />
-        </audio>
-
-        <div className="left-and-right">
-          <FaCaretSquareLeft
-            className="left-button"
-            style={{ cursor: "pointer", fontSize: "24px" }}
-            onClick={back10}
-          />
-          <p>10 Seconds</p>
-          <FaCaretSquareRight
-            className="left-button"
-            style={{ cursor: "pointer", fontSize: "24px" }}
-            onClick={forward10}
-          />
-        </div>
-
-        <div className="buttons-music">
-          <button
-            className={showLyrics ? "active" : ""}
-            onClick={() => {
-              setShowLyrics(!showLyrics);
-              setShowVocabulary(false);
-            }}
-          >
-            Lyrics
-          </button>
-
-          <button
-            className={showVocabulary ? "active" : ""}
-            onClick={() => {
-              setShowVocabulary(!showVocabulary);
-              setShowLyrics(false);
-            }}
-          >
-            Vocabulary
-          </button>
-        </div>
+          {showVocabulary ? "Lyrics" : "Vocabulary"}
+        </button>
       </section>
-      <main className="main-music">
-        {showLyrics && (
-          <div className="lyrics-music">{renderLyrics(lyricsText)}</div>
-        )}
 
+      <main className="main-music">
+        {!showVocabulary && (
+          <div
+            className="lyrics-music"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            {renderLyrics(lyricsText)}
+          </div>
+        )}
         {showVocabulary && (
-          <div className="vocabulary-box">
+          <div
+            className="vocabulary-box"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             {vocabularyWords.map((w, i) => (
               <div className="vocabulary-words" key={i}>
                 {w}
@@ -290,6 +288,7 @@ const Music = () => {
           </div>
         )}
       </main>
+
       <footer className="footer-music">
         <a href="https://github.com/JoaoPMV">
           <div className="dev-info">
@@ -298,9 +297,10 @@ const Music = () => {
           </div>
         </a>
       </footer>
+
       <VirtualKeyboard
         isMobile={isMobile}
-        keyboardVisible={keyboardVisible} // <-- AQUI!
+        keyboardVisible={keyboardVisible}
         activeInputIndex={activeInputIndex}
         setLyricsInputs={setLyricsInputs}
       />
